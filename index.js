@@ -15,12 +15,19 @@ switch (args[0]) {
 		range = range.replace(/ |[a-z]/gi, "");
 		range = range.split("-");
 		range = utilGENARR(parseInt(range[0]), parseInt(range[1]));
+		range = utilSHUFFLE(range);
 
-		console.log(utilSHUFFLE(range));
+		console.log(`Input:  [${range.join()}]`);
+		console.log(`Sorted: [${compsort(range).join()}]`);
+
 	} break;
 
 	default:
 		console.log(utilERROR("Invalid argument\n\tSee -h for available commands"));
+}
+
+function compsort(array) {
+	return array;
 }
 
 function utilERROR(details, source = "compsort") { return `${source} [error]\n=>\t${details}`; }
@@ -33,7 +40,7 @@ function utilMULTISHIFT(array, amount) {
 
 function utilSHUFFLE(array) {
 	for (let i = array.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
+		let j = Math.floor(Math.random() * (i + 1));
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 
