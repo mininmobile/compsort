@@ -1,0 +1,19 @@
+{
+  "name": "compsort",
+  "version": "1.0.0",
+  "description": "An (inefficient) sorting algorithm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mininmobile/compsort.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mininmobile/compsort/issues"
+  },
+  "homepage": "https://github.com/mininmobile/compsort#readme"
+}
