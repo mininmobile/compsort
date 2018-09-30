@@ -14,8 +14,9 @@ switch (args[0]) {
 		let range = args.join(""); 
 		range = range.replace(/ |[a-z]/gi, "");
 		range = range.split("-");
+		range = utilGENARR(parseInt(range[0]), parseInt(range[1]));
 
-		console.log(utilGENARR(parseInt(range[0]), parseInt(range[1])));
+		console.log(utilSHUFFLE(range));
 	} break;
 
 	default:
@@ -28,6 +29,15 @@ function utilINFO(details) { return `compsort [info]\n=>\t${details.join("\n\t")
 function utilMULTISHIFT(array, amount) {
 	for (let i = 0; i < amount; i++)
 		array.shift();
+}
+
+function utilSHUFFLE(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+
+	return array;
 }
 
 function utilGENARR(rOne, rTwo) {
